@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web Guapas</title>
-    <link rel="stylesheet" href="css/estilos.css" />
+    <link rel="stylesheet" href="css/estilos.css" />    
   </head>
 
   <!--Comienzo del Body-->
@@ -22,12 +22,12 @@
       </div>
     </nav>
 
-    <!--Seccion de presentacion-->
-    <main>
-      <section>
+    <header class="encolumnar">
+      <!--Seccion de presentacion-->
+      <section id="presentacion">
         <h1>
           Somos <br />
-          <strong>wwwapas</strong>
+          <strong class="grande">wwwapas</strong>
         </h1>
 
         <h2>Social media managers | creadoras de contenido</h2>
@@ -39,8 +39,12 @@
             ¡Creamos relaciones estables y duraderas con tus clientes!
           </strong>
         </p>
-        <img src="img/foto.png" alt="Logo wapas" />
+        <section><img src="img/foto.png" alt="Logo wapas" /></section>
+    </header>
 
+    <!--Seccion principal-->
+    <main>    
+      <div class="encolumnar">  
         <h3>¡Hola! Somos SOFI & JULIA,</h3>
         <p>
           las social media managers, las creadoras de contenido, las
@@ -65,13 +69,14 @@
           >
         </p>
       </section>
+    </div>
 
       <!--Seccion de servicios-->
-      <div id="servicios">
+      <div id="servicios" class="encolumnar">
         <section>
-          <img src="img/img-servicios.png" alt="Imagen de los servicios" />
+          <img id="imagen" src="img/img-servicios.png" alt="Imagen de los servicios" />
 
-          <h4>Servicios</h4>
+          <h2 id="titulo">Servicios</h2>
           <ol>
             <li>Análisis de perfil (Benchmarking)</li>
             <li>Revisión y activación de canales</li>
@@ -85,27 +90,29 @@
               Diagramamos un calendario que se ajuste a los objetivos de la
               empresa
             </li>
-            <li>¡Empezamos a comunicar!</li>
+            <li class="item">¡Empezamos a comunicar!</li>
           </ol>
         </section>
       </div>
 
       <!--Seccion de contacto-->
+      <div class="encolumnar" id="contacto">
       <section>
         <h4>
           <span> ¿Querés que nos </span> <br />
           contactemos con vos?
         </h4>
         <a id="contacto"></a>
-        <p>Envianos tu consulta >></p>
+        <p class="item">Envianos tu consulta >></p>
         <br />
 
-        <form action="codigo.php" method="post">
+        <!--Formulario de contacto-->
+        <form action="php/codigo.php" method="post">
           <label
             >Nombre <span>*</span>
             <input
               name="nombre"
-              class="block"
+              
               type="text"
               required
               placeholder="Esteban Quito"
@@ -116,7 +123,7 @@
             >Email <span>*</span>
             <input
               name="email"
-              class="block"
+              
               type="email"
               required
               placeholder="quito_este@mail.com"
@@ -125,13 +132,17 @@
 
           <label
             >Mensaje <span>*</span>
-            <textarea name="" id="" cols="28" rows="3" required></textarea>
+            <textarea name="" id="" cols="28" rows="10" required></textarea>
           </label>
 
-          <input type="submit" value="Enviar consulta" />
-          <input type="reset" value="Borrar" />
+         <div class="boton encolumnar">
+          <input type="submit" value="Enviar consulta" class="form_button" />
+          <input type="reset" value="Borrar" class="form_button" />
+         </div>
         </form>
       </section>
+    </div>
+    </main>
 
       <!--Seccion de redes y enlaces externos-->
       <section>
@@ -171,7 +182,7 @@
           /></a>
         </div>
       </section>
-    </main>
+    
 
     <footer>
       <h1><a href="index.html">wwwwapas</a></h1>

@@ -12,6 +12,14 @@ body {
   margin: 0;
 }
 
+h1,
+h2,
+h3,
+h4,
+.item {
+  color: black;
+}
+
 img {
   width: 100%;
 }
@@ -64,8 +72,8 @@ form span {
 }
 
 h2 {
-  font-weight: 400;
-  font-size: 1.66em;
+  font-weight: 700;
+  font-size: 35px;
   background-color: rgb(252, 238, 33);
 }
 
@@ -73,6 +81,7 @@ h3 {
   font-weight: 900;
   font-size: 2.66em;
   background-color: rgb(252, 238, 33);
+  display: inline;
 }
 
 p {
@@ -85,17 +94,42 @@ a {
 }
 
 h4 {
-  font-size: 3.41em;
-  text-transform: uppercase;
+  margin: 0;
+  font-size: 51px;
+  color: white;
+  background-color: black;
+  line-height: 100px;
+  padding: 10px;
+  display: inline;
 }
 
-label,
-textarea {
+/* Estilo de sección servicios */
+
+.item {
+  font-weight: bold;
+  font-size: 24px;
+  background-color: #fcee21;
+}
+
+#titulo {
+  font-size: 40px;
+}
+
+#imagen {
+  width: 80%;
   display: block;
+  margin: auto;
+}
+
+/* Estilo del Form */
+form {
+  width: 400px;
 }
 
 label {
   margin-bottom: 5px;
+  font-weight: 700;
+  display: block;
 }
 
 .block {
@@ -111,6 +145,25 @@ textarea {
   width: 100%;
 }
 
-form {
-  margin: auto;
+.form_button {
+  margin: 0;
+  width: auto;
+  background-color: black;
+  color: white;
+}
+
+.grande {
+  font-size: 100px;
+  font-family: "Coiny", cursive;
+}
+
+/* Para muchos contenedores */
+.encolumnar {
+  padding: 20px;
+  margin-bottom: 30px;
+  border-bottom: 0.5px solid gray;
+}
+
+header.encolumnar {
+  border-bottom: none;
 }
