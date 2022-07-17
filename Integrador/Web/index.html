@@ -4,31 +4,28 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Web Guapas</title>
-    <link rel="stylesheet" href="css/estilos.css" />    
+    <link rel="stylesheet" href="css/estilos.css" />
+    <title>Web Wwwapas</title>
   </head>
 
-  <!--Comienzo del Body-->
+  <!-- Comienzo del body -->
   <body>
-    <!--Seccion de navegacion-->
+    <!-- Navegación -->
     <nav>
-      <div>
-        <h1>
-          <a href="index.html"> wwwapas</a>
-        </h1>
-        <a href="#">Inicio</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#contacto">Contacto</a>
-      </div>
+      <h1>wwwapas</h1>
+      <ul>
+        <li>
+          <a href="index.html">Inicio</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#contacto">Contacto</a>
+        </li>
+      </ul>
     </nav>
 
+    <!-- Encabezado -->
     <header class="encolumnar">
-      <!--Seccion de presentacion-->
       <section id="presentacion">
-        <h1>
-          Somos <br />
-          <strong class="grande">wwwapas</strong>
-        </h1>
+        <h1>Somos <strong class="grande">wwwapas</strong></h1>
 
         <h2>Social media managers | creadoras de contenido</h2>
 
@@ -39,43 +36,55 @@
             ¡Creamos relaciones estables y duraderas con tus clientes!
           </strong>
         </p>
-        <section><img src="img/foto.png" alt="Logo wapas" /></section>
+      </section>
+
+      <section>
+        <img src="img/foto.png" alt="Logo wapas" />
+      </section>
     </header>
 
-    <!--Seccion principal-->
-    <main>    
-      <div class="encolumnar">  
-        <h3>¡Hola! Somos SOFI & JULIA,</h3>
-        <p>
-          las social media managers, las creadoras de contenido, las
-          copywriters, las generadoras de leads, las diseñadoras, las estrategas
-          en marketing digital, las potenciadoras de ventas, el posicionamiento
-          de tu marca
-          <strong>
-            ¡Somos el complemento que necesitás para hacer crecer tu marca!
-            ¡Somos wwwapas!
-          </strong>
-        </p>
-
-        <h3>GESTIONAMOS TUS REDES SOCIALES</h3>
-        <p>
-          La transformación digital no es solo para grandes compañías, todas las
-          empresas deben emprenderla cuanto antes y aquí es donde podemos
-          asistirte. Armamos estrategias a medida para tu empresa, marca o
-          producto
-          <strong
-            >¡Aumentá tu presencia digital y generá nuevas ventas y
-            contactos!</strong
-          >
-        </p>
-      </section>
-    </div>
-
-      <!--Seccion de servicios-->
-      <div id="servicios" class="encolumnar">
+    <!-- Principal -->
+    <main>
+      <div class="encolumnar">
         <section>
-          <img id="imagen" src="img/img-servicios.png" alt="Imagen de los servicios" />
+          <h3>¡Hola! Somos SOFI & JULIA,</h3>
+          <p>
+            las social media managers, las creadoras de contenido, las
+            copywriters, las generadoras de leads, las diseñadoras, las
+            estrategas en marketing digital, las potenciadoras de ventas, el
+            posicionamiento de tu marca
+            <strong>
+              ¡Somos el complemento que necesitás para hacer crecer tu marca!
+              ¡Somos wwwapas!
+            </strong>
+          </p>
+        </section>
 
+        <section>
+          <h3>GESTIONAMOS TUS REDES SOCIALES</h3>
+          <p>
+            La transformación digital no es solo para grandes compañías, todas
+            las empresas deben emprenderla cuanto antes y aquí es donde podemos
+            asistirte. Armamos estrategias a medida para tu empresa, marca o
+            producto
+            <strong
+              >¡Aumentá tu presencia digital y generá nuevas ventas y
+              contactos!</strong
+            >
+          </p>
+        </section>
+      </div>
+
+      <!-- Servicios -->
+      <div class="encolumnar" id="servicios">
+        <section>
+          <img
+            id="imagen"
+            src="img/img-servicios.png"
+            alt="Cúmulo de logos de servicios"
+          />
+        </section>
+        <section>
           <h2 id="titulo">Servicios</h2>
           <ol>
             <li>Análisis de perfil (Benchmarking)</li>
@@ -95,98 +104,75 @@
         </section>
       </div>
 
-      <!--Seccion de contacto-->
+      <!-- Contacto -->
       <div class="encolumnar" id="contacto">
-      <section>
-        <h4>
-          <span> ¿Querés que nos </span> <br />
-          contactemos con vos?
-        </h4>
-        <a id="contacto"></a>
-        <p class="item">Envianos tu consulta >></p>
-        <br />
+        <section>
+          <h4>
+            ¿Querés que nos <br />
+            contactemos con vos?
+          </h4>
+          <p class="item">Envianos tu consulta >></p>
+          <form action="php/codigo.php" method="post">
+            <label
+              >Nombre <span>*</span>
+              <input
+                name="nombre"
+                class="block"
+                type="text"
+                required
+                placeholder="Esteban Quito"
+              />
+            </label>
 
-        <!--Formulario de contacto-->
-        <form action="php/codigo.php" method="post">
-          <label
-            >Nombre <span>*</span>
-            <input
-              name="nombre"
-              
-              type="text"
-              required
-              placeholder="Esteban Quito"
-            />
-          </label>
+            <label
+              >Email <span>*</span>
+              <input
+                name="email"
+                class="block"
+                type="email"
+                required
+                placeholder="quito_este@mail.com"
+              />
+            </label>
 
-          <label
-            >Email <span>*</span>
-            <input
-              name="email"
-              
-              type="email"
-              required
-              placeholder="quito_este@mail.com"
-            />
-          </label>
+            <label
+              >Mensaje <span>*</span>
+              <textarea name="" id="" cols="28" rows="3" required></textarea>
+            </label>
 
-          <label
-            >Mensaje <span>*</span>
-            <textarea name="" id="" cols="28" rows="10" required></textarea>
-          </label>
-
-         <div class="boton encolumnar">
-          <input type="submit" value="Enviar consulta" class="form_button" />
-          <input type="reset" value="Borrar" class="form_button" />
-         </div>
-        </form>
-      </section>
-    </div>
+            <div class="boton encolumnar">
+              <input
+                class="blackButton"
+                type="submit"
+                value="Enviar consulta"
+              />
+              <input class="blackButton" type="reset" value="Borrar" />
+            </div>
+          </form>
+        </section>
+      </div>
     </main>
 
-      <!--Seccion de redes y enlaces externos-->
-      <section>
-        <div>
-          <p>
-            redes <br />
-            wwwapas
-          </p>
-        </div>
-        <div>
-          <a
-            title="Instagram Educacion IT"
-            href="https://www.instagram.com/educacionit"
-            target="_blank"
-            ><img src="img/instagram-icon.png" alt="Icono instagram"
-          /></a>
-        </div>
+    <!-- Enlaces externos -->
+    <aside class="encolumnar">
+      <a href="https://www.instagram.com/"
+        ><img src="img/instagram-icon.png" alt="Icono instagram"
+      /></a>
+      <a href="https://dribbble.com/"
+        ><img src="img/dribbble-icon.png" alt="Icono dribbble"
+      /></a>
+      <a href="https://www.linkedin.com/"
+        ><img src="img/linkedin-icon.png" alt="Icono linkedin"
+      /></a>
+      <a href="https://www.facebook.com/"
+        ><img src="img/facebook-icon.png" alt="Icono facebook"
+      /></a>
+    </aside>
 
-        <div>
-          <a href="https://dribbble.com/"
-            ><img src="img/dribbble-icon.png" alt="Icono dribbble"
-          /></a>
-        </div>
-
-        <div>
-          <a href="https://www.linkedin.com/"
-            ><img src="img/linkedin-icon.png" alt="Icono linkedin"
-          /></a>
-        </div>
-
-        <div>
-          <a
-            title="Facebook Educacion IT"
-            href="https://www.facebook.com/EducacionIT/"
-            target="_blank"
-            ><img src="img/facebook-icon.png" alt="Icono facebook"
-          /></a>
-        </div>
-      </section>
-    
-
+    <!-- Pie -->
     <footer>
-      <h1><a href="index.html">wwwwapas</a></h1>
-      <a href="mailto:wwwwapas_sm@gmail.com">wwwwapas_sm@gmail.com</a>
+      <h1>wwwapas</h1>
+      <a href="mailto:wwwapas_sm@gmail.com">wwwapas_sm@gmail.com</a>
     </footer>
   </body>
 </html>
