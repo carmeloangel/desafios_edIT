@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Roboto:wght@400;700&display=swap");
+
+/* General */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  font-size: 30.66px;
+  color: #04146c;
+}
+
+/* Header */
+header {
+  height: 20px;
+  background-color: #3957f1;
+}
+
+/* Principal */
+main {
+  margin-left: 4%;
+}
+
+/* Navegacion */
+nav {
+  margin-left: 5%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+}
+
+nav div {
+  width: 25%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#logo {
+  width: 5%;
+}
+
+nav a {
+  color: #04146c;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #3957f1;
+  text-decoration: underline;
+}
+
+.activo {
+  font-weight: 700;
+}
+
+/* Pregunta */
+h4 {
+  margin: 0;
+  font-family: "Roboto Slab", serif;
+  font-size: 45.33px;
+  color: #2c00cc;
+}
+
+/* Formulario */
+form {
+  width: 35%;
+}
+label {
+  font-family: "Roboto", sans-serif;
+  display: block;
+  font-weight: 700;
+}
+
+span {
+  color: red;
+}
+
+input,
+textarea {
+  border: 1px solid #a892fa;
+  display: block;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+}
+
+input {
+  height: 50px;
+  margin-bottom: 15px;
+}
+
+textarea {
+  height: 100px;
+}
+
+.encolumnar {
+  display: flex;
+  justify-content: flex-start;
+}
+
+#resetear {
+  background-color: orangered;
+}
+
+#enviar {
+  background-color: blue;
+}
+
+.boton {
+  width: 36%;
+  height: auto;
+  margin: 2%;
+  font-family: "Roboto Slab", serif;
+  font-weight: 700;
+  border-style: solid;
+  color: white;
+  font-size: 32px;
+}

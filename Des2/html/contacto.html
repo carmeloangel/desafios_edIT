@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desafío 2 Contacto</title>
+    <link rel="stylesheet" href="../css/contacto.css" />
+  </head>
+
+  <body>
+    <header></header>
+
+    <nav>
+      <a id="logo" href="../index.html">
+        <img src="../img/M5-logo-azul.svg" alt="Logo de WH" />
+      </a>
+      <div>
+        <a href="../index.html" id="home">HOME</a>
+        <a href="#contacto" class="activo">CONTACTO</a>
+      </div>
+    </nav>
+
+    <main>
+      <section>
+        <h4>¿Querés que nos contactemos con vos?</h4>
+        <p>Dejanos tu consulta:</p>
+      </section>
+
+      <form action="php/codigo.php" method="post" required>
+        <label
+          >Nombre completo <span>*</span>
+          <input
+            name="nombre"
+            class="block"
+            type="text"
+            required
+            placeholder="Esteban Quito"
+          />
+        </label>
+
+        <label
+          >Email <span>*</span>
+          <input
+            name="email"
+            class="block"
+            type="email"
+            required
+            placeholder="quito_este@mail.com"
+          />
+        </label>
+
+        <label
+          >Comentario <span>*</span>
+          <textarea name="" id="" cols="28" rows="3" required></textarea>
+        </label>
+
+        <div class="encolumnar">
+          <input id="resetear" class="boton" type="reset" value="Resetear" />
+          <input id="enviar" class="boton" type="submit" value="Enviar" />
+        </div>
+      </form>
+    </main>
+
+    <footer></footer>
+  </body>
+</html>
