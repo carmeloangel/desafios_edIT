@@ -1,4 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap");
+
+@font-face {
+  font-family: "CoolveticaRegular";
+  src: url(../font/coolvetica_rg.otf);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,56 +13,55 @@
 
 main {
   display: flex;
-  align-items: center;
+  justify-content: space-evenly;
+  padding: 1em;
+}
+
+div {
+  width: 21%;
+  padding: 1em;
+  text-align: center;
+  display: flex;
   flex-direction: column;
-}
+  background-color: #eff2ff;
 
-h1,
-h4,
-button {
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-
-@font-face {
-  font-family: "CoolveticaRegular";
-  src: url(../font/coolvetica_rg.otf);
-}
-
-@font-face {
-  font-family: "RobotoLight";
-  src: url(../font/Roboto-Light.ttf);
+  align-content: center;
+  /* height: 25em; */
+  border-radius: 8%;
 }
 
 h1 {
   font-family: "CoolveticaRegular", sans-serif;
   color: #0a2ff1;
   font-weight: 400;
-  font-size: 50px;
+  font-size: 120px;
+  margin-left: 3%;
+  margin-top: 2%;
+  margin-bottom: 1.5%;
 }
 
-h4 {
-  font-family: "RobotoLight", sans-serif;
-  color: #04146c;
-  font-size: 18px;
+img {
+  width: 25%;
+  margin: auto;
+  margin-top: 10%;
+  margin-bottom: 15%;
 }
 
-button {
+#apple {
+  width: 18%;
+}
+
+h2 {
   font-family: "Roboto", sans-serif;
-  font-size: 18px;
-  height: 40px;
-  padding-left: 5%;
-  padding-right: 5%;
-  border: solid 3px #0a2ff1;
-  margin-bottom: 5px;
-}
-
-.buttonA {
-  color: white;
-  background-color: #0a2ff1;
-}
-
-.buttonB {
-  background-color: white;
+  font-weight: 900;
   color: #0a2ff1;
+  font-size: 30px;
+  margin-bottom: 3%;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  margin-bottom: 3%;
 }

@@ -1,4 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap");
+
+@font-face {
+  font-family: "CoolveticaRegular";
+  src: url(../font/coolvetica_rg.otf);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,46 +13,74 @@
 
 main {
   display: flex;
-  align-items: center;
+  justify-content: space-evenly;
+  padding: 2em;
+}
+
+.contenedorA {
+  width: 45%;
+  padding: 0.8em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  background-color: #eff2ff;
+
+  border-radius: 8%;
+  box-shadow: 5px 5px 10px gray;
+}
+
+.contenedorB {
+  display: flex;
+  flex-direction: row;
+  height: 5%;
+}
+
+.contenedorC {
+  display: flex;
+  flex-direction: row;
   justify-content: center;
 }
 
-section,
-div {
-  margin: 1.5%;
-}
-
-h1,
-h4 {
-  margin-top: 5px;
-  margin-bottom: 25px;
-}
-
-main section img {
-  width: 95%;
-}
-
-main div img {
-  width: 30%;
-}
-
 h1 {
-  font-family: "Roboto", sans-serif;
-  font-weight: bold;
+  font-family: "CoolveticaRegular", sans-serif;
   color: #0a2ff1;
-  font-size: 4.2rem;
+  font-weight: 400;
+  font-size: 40px;
+  margin-left: 7%;
 }
 
-h4 {
+.iconosGrandes {
+  width: 20%;
+  margin: auto;
+}
+
+h2 {
   font-family: "Roboto", sans-serif;
-  font-weight: 300;
-  color: #04146c;
-  font-size: 2rem;
+  font-weight: 900;
+  color: #0a2ff1;
+  font-size: 16px;
+  margin-bottom: 3%;
 }
 
 p {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
-  color: #04146c;
-  font-size: 1.1rem;
+  font-size: 13px;
+  margin-bottom: 3%;
+}
+
+.id {
+  width: 20%;
+}
+
+.info {
+  width: 10%;
+}
+
+.description {
+  font-size: 10px;
+}
+
+.diagnostico {
+  width: 10%;
 }

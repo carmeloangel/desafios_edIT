@@ -1,80 +1,41 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
-
-@font-face {
-  font-family: "CoolveticaRegular";
-  src: url(../font/coolvetica_rg.otf);
-}
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;700;900&display=swap");
 
 * {
-  margin: 0;
+  margin: 2%;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Mulish", sans-serif;
 }
 
-main {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-section {
-  margin-left: 7%;
-}
-
-section div h1,
-section div p {
-  margin-top: 2%;
-  margin-bottom: 2%;
-}
-
-main div {
-  width: 25%;
-  padding: 1em;
-  background-color: #eff2ff;
-}
-
-main div h6,
-main div h4,
-main div p {
-  margin-top: 4%;
-  margin-bottom: 3%;
+h2 {
+  font-weight: 400;
+  font-size: 40px;
+  color: #0a2ff1;
 }
 
 h1 {
-  font-family: "CoolveticaRegular", sans-serif;
-  font-weight: 400;
+  font-weight: 900;
+  font-size: 80px;
   color: #0a2ff1;
-  font-size: 3.5rem;
-}
-
-#descripcion1 {
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
-  color: #04146c;
-  font-size: 1rem;
-}
-
-img {
-  width: 50%;
-}
-
-h6 {
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
-  font-style: italic;
-  color: #04146c;
-  font-size: 0.8rem;
-}
-
-h4 {
-  font-family: "Roboto", sans-serif;
-  font-weight: 700;
-  color: #04146c;
-  font-size: 0.8rem;
 }
 
 p {
-  font-family: "Roboto", sans-serif;
   font-weight: 400;
+  font-size: 26.66px;
   color: #04146c;
-  font-size: 0.8rem;
+}
+
+strong {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+button {
+  width: 400px;
+  height: 70px;
+  font-weight: 700;
+  font-size: 29.33px;
+  color: white;
+  background-color: #0a2ff1;
+  border: 1px solid #04146c;
 }
