@@ -1,86 +1,53 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap");
-
-@font-face {
-  font-family: "CoolveticaRegular";
-  src: url(../font/coolvetica_rg.otf);
-}
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;700;900&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  font-family: "Mulish", sans-serif;
+  font-weight: 400;
+  color: #0a2ff1;
 }
 
-main {
+body {
+  margin: 2%;
+}
+
+aside {
   display: flex;
   justify-content: space-evenly;
-  padding: 2em;
+  padding: 1em;
 }
 
-.contenedorA {
-  width: 45%;
-  padding: 0.8em;
+div {
+  width: 16%;
+  padding: 0.2em;
   text-align: center;
   display: flex;
   flex-direction: column;
-  background-color: #eff2ff;
-
-  border-radius: 8%;
-  box-shadow: 5px 5px 10px gray;
-}
-
-.contenedorB {
-  display: flex;
-  flex-direction: row;
-  height: 5%;
-}
-
-.contenedorC {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  overflow: auto;
 }
 
 h1 {
-  font-family: "CoolveticaRegular", sans-serif;
-  color: #0a2ff1;
-  font-weight: 400;
-  font-size: 40px;
-  margin-left: 7%;
-}
-
-.iconosGrandes {
-  width: 20%;
-  margin: auto;
-}
-
-h2 {
-  font-family: "Roboto", sans-serif;
+  font-size: 53.33px;
   font-weight: 900;
-  color: #0a2ff1;
-  font-size: 16px;
-  margin-bottom: 3%;
+  color: #04146c;
+}
+
+img {
+  width: 55%;
+  margin: auto;
+  margin-top: 10%;
+  margin-bottom: 15%;
 }
 
 p {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-size: 13px;
-  margin-bottom: 3%;
+  /* font-size: 0.85em; */
+  font-size: 40px;
+  color: #04146c;
 }
 
-.id {
-  width: 20%;
-}
-
-.info {
-  width: 10%;
-}
-
-.description {
-  font-size: 10px;
-}
-
-.diagnostico {
-  width: 10%;
+hr {
+  border: 0.4px solid #04146c;
 }
