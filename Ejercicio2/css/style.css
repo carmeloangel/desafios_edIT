@@ -1,53 +1,45 @@
-@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700;900&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
   font-family: "Mulish", sans-serif;
-  font-weight: 400;
-  color: #0a2ff1;
 }
 
-body {
-  margin: 2%;
+.container {
+  width: 100%;
+}
+video {
+  position: absolute;
+  z-index: -1;
 }
 
-aside {
-  display: flex;
-  justify-content: space-evenly;
-  padding: 1em;
-}
-
-div {
-  width: 16%;
-  padding: 0.2em;
+.flex {
   text-align: center;
   display: flex;
   flex-direction: column;
-  overflow: auto;
+  width: 99vw;
+  height: 90vh;
+  justify-content: center;
+}
+
+h1,
+input {
+  text-align: center;
+  margin: 2%;
 }
 
 h1 {
-  font-size: 53.33px;
+  color: white;
   font-weight: 900;
-  color: #04146c;
+  font-size: 55px;
+  text-shadow: 2px 2px 2px black;
 }
-
-img {
-  width: 55%;
-  margin: auto;
-  margin-top: 10%;
-  margin-bottom: 15%;
-}
-
-p {
-  /* font-size: 0.85em; */
-  font-size: 40px;
-  color: #04146c;
-}
-
-hr {
-  border: 0.4px solid #04146c;
+input {
+  width: 400px;
+  height: 50px;
+  border-radius: 10px;
+  border: 2px solid gainsboro;
+  font-size: 20px;
 }
