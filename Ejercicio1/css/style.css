@@ -1,95 +1,79 @@
-@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Mono&family=PT+Sans:wght@400;700&family=PT+Serif+Caption&display=swap");
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Mulish", sans-serif;
-}
-
-h1 {
-  margin: 4%;
-  font-size: 50px;
-  color: #0a2ff1;
-  font-weight: 900;
-}
-
-main {
-  margin: 2%;
+/* Trabajamos el Nav y sus elementos */
+nav {
   display: flex;
+  font-family: "PT Mono", monospace;
 }
 
-main div {
-  margin: 2%;
-  width: 50%;
-}
-
-main div p {
-  margin-left: 5px;
-  margin-bottom: 2%;
-}
-
-main div p,
-main div ul {
-  font-size: 31px;
+a {
+  text-decoration: none;
   color: #04146c;
 }
 
-main div img {
-  width: 100%;
-  position: relative;
-  top: 20%;
+#derecha {
+  margin-left: auto;
+  font-weight: bold;
+  color: #0a2ff1;
 }
 
-main div ul {
-  margin-left: 25px;
+a:nth-child(1)::after,
+a:nth-child(2)::after {
+  content: "/";
 }
 
-.suggest {
-  /* Lo que se pide en el desafio */
-  height: 300px;
-  width: 50px;
-  border-radius: 10px;
-  line-height: 350px;
-  background-color: #04146c;
-  color: white;
-  font-weight: 700;
+a:hover {
+  background-color: aquamarine;
+  color: black;
+}
+/* /nav */
 
-  /* Lo posicionamos */
-  position: fixed;
-  top: 30%;
-  right: 1px;
-
-  border: 1px solid whitesmoke;
+/* h1 y p principales */
+h1 {
+  font-family: "PT Serif Caption", serif;
+  color: #0a2ff1;
 }
 
-div.suggest p {
-  font-size: 20px;
-  /*Lo rotamos 90 grados  */
-  transform: rotate(-90deg);
+p {
+  font-family: "PT Sans", sans-serif;
+  color: #04146c;
+}
+/* /h1 /p */
+
+/* Las listas y sus items */
+h2 {
+  font-family: "PT Sans", sans-serif;
+  color: #04146c;
 }
 
-/* Mobile & Tablet */
-@media (max-width: 800px) {
-  main {
-    display: block;
-    flex-direction: column;
-    margin: 0%;
-    width: 100%;
-  }
-
-  main div {
-    width: 100%;
-  }
-
-  main div img {
-    width: 85%;
-  }
-
-  .suggest {
-    height: 200px;
-    width: 50px;
-    line-height: 255px;
-    top: 70%;
-  }
+ul {
+  padding-left: 2rem;
+  list-style-type: none;
 }
+
+ul li {
+  font-family: "PT Sans", sans-serif;
+  color: #04146c;
+  padding-left: 2rem;
+  background-position: 0 0;
+  background-size: 1.2rem 1.2rem;
+  background-repeat: no-repeat;
+  margin-bottom: 1%;
+}
+
+ul:first-of-type li:nth-child(2) {
+  background-image: url(../img/foto.svg);
+}
+
+ul:first-of-type li:nth-child(1) {
+  background-image: url(../img/vector.svg);
+}
+
+ul:nth-of-type(2) li:nth-child(1) {
+  background-image: url(../img/licencia.svg);
+}
+
+ul:nth-of-type(2) li:nth-child(2) {
+  background-image: url(../img/precio.svg);
+}
+/* /ul */
