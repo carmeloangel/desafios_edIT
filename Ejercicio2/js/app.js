@@ -1,4 +1,4 @@
-let ingresoTotal = prompt("Ingrese el total de los ingresos: ");
+let ingresoTotal = parseInt(prompt("Ingrese el total de los ingresos: "));
 
 let gastosNecesarios = ingresoTotal * 0.5;
 let gastosOpcionales = ingresoTotal * 0.3;
