@@ -1,8 +1,8 @@
-var ingresoTotal = Number(prompt("Ingrese el total de los ingresos: "));
+let ingresoTotal = prompt("Ingrese el total de los ingresos: ");
 
-var gastosNecesarios = ingresoTotal * 0.5;
-var gastosOpcionales = ingresoTotal * 0.3;
-var ahorroInversion = ingresoTotal * 0.2;
+let gastosNecesarios = ingresoTotal * 0.5;
+let gastosOpcionales = ingresoTotal * 0.3;
+let ahorroInversion = ingresoTotal * 0.2;
 
 alert(
   "El dinero sera usado de la siguiente manera: $" +
