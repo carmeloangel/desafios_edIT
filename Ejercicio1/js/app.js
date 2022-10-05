@@ -1,39 +1,91 @@
-let day = new Date().getDay();
-let welcome = document.getElementById("welcome");
+/* Consigna
+Diseñar una aplicación JavaScript que,
+recibiendo el flujo de caja del último año de la
+empresa, muestre si dicho flujo genera o no
+pérdidas. */
 
-switch (day) {
-  case 0:
-    mensaje = "Hoy es domingo. Que descanses muy bien!";
-    break;
-  case 1:
-    mensaje = "Es lunes! Arrancamos con toda!";
-    break;
-  case 2:
-    mensaje = "Que tengas lindo martes!";
-    break;
-  case 3:
-    mensaje = "Vamos que estamos en la mitad. Buen miercoles!";
-    break;
-  case 4:
-    mensaje = "Un casi viernes. Ten lindo jueves!";
-    break;
-  case 5:
-    mensaje = "Es hoy!! El ultimo envion y ya finde. Buen viernes!";
-    break;
-  case 6:
-    mensaje = "Tamos chelo y el cuerpo lo sabe. Que tengas sabadozo!";
-    break;
-  default:
-    mensaje = "Hubo un error al obtener el dia.";
-    break;
+let flujoDeCaja = [
+  {
+    periodo: "Enero",
+    ingresos: 1500,
+    egresos: 1500,
+  },
+  {
+    periodo: "Febrero",
+    ingresos: 2500,
+    egresos: 2500,
+  },
+  {
+    periodo: "Marzo",
+    ingresos: 84683,
+    egresos: 1155,
+  },
+  {
+    periodo: "Abril",
+    ingresos: 135353,
+    egresos: 1533,
+  },
+  {
+    periodo: "Mayo",
+    ingresos: 1535,
+    egresos: 5434,
+  },
+  {
+    periodo: "Junio",
+    ingresos: 4343354,
+    egresos: 5434534,
+  },
+  {
+    periodo: "Julio",
+    ingresos: 435453,
+    egresos: 4543,
+  },
+  {
+    periodo: "Agosto",
+    ingresos: 78351,
+    egresos: 7816,
+  },
+  {
+    periodo: "Septiembre",
+    ingresos: 1878,
+    egresos: 95634,
+  },
+  {
+    periodo: "Octubre",
+    ingresos: 48483,
+    egresos: 9433,
+  },
+  {
+    periodo: "Noviembre",
+    ingresos: 35483,
+    egresos: 53133,
+  },
+  {
+    periodo: "Diciembre",
+    ingresos: 3843,
+    egresos: 348133,
+  },
+];
+
+let sumatoriaIngresos = 0;
+let sumatoriaEgresos = 0;
+
+for (let index = 0; index < flujoDeCaja.length; index++) {
+  const element = flujoDeCaja[index];
+  sumatoriaEgresos += element.egresos;
+  sumatoriaIngresos += element.ingresos;
 }
 
-let age = Number(prompt("Ingresa tu edad: "));
+console.log("Ingresos totales: " + sumatoriaIngresos);
+console.log("Egresos totales: " + sumatoriaEgresos);
 
-if (age >= 18) {
-  alert(mensaje + " Bienvenido!");
-  welcome.innerHTML = mensaje + " Bienvenido!";
+let welcome = document.getElementById("welcome");
+let remanente = sumatoriaIngresos - sumatoriaEgresos;
+
+if (remanente > 0) {
+  welcome.innerHTML = `El flujo de este año esta <b>generando ganancias<b>.`;
+  console.log(`El flujo de este año esta generando ganancias.`);
 } else {
-  alert("Error. Aun no es mayor de edad. Acceso denegado.");
-  welcome.innerHTML = "Error. Aun no es mayor de edad. Acceso denegado.";
+  welcome.innerHTML = `El flujo de este año esta <b>generando perdidas<b>.`;
+  console.log(`El flujo de este año esta generando perdidas.`);
 }
