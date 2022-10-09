@@ -2,7 +2,29 @@
 Diseñar una aplicación JavaScript que,
 recibiendo el flujo de caja del último año de la
 empresa, muestre si dicho flujo genera o no
-pérdidas. */
+pérdidas. 
+Resolver usando funciones */
+
+function calcularBalance(flujoDeCaja) {
+  let sumatoriaIngresos = 0;
+  let sumatoriaEgresos = 0;
+
+  for (let index = 0; index < flujoDeCaja.length; index++) {
+    const element = flujoDeCaja[index];
+    sumatoriaEgresos += element.egresos;
+    sumatoriaIngresos += element.ingresos;
+  }
+
+  let remanente = sumatoriaIngresos - sumatoriaEgresos;
+
+  if (remanente > 0) {
+    return 1;
+  } else if (remanente === 0) {
+    return 0;
+  } else {
+    return -1;
+  }
+}
 
 let flujoDeCaja = [
   {
@@ -67,25 +89,14 @@ let flujoDeCaja = [
   },
 ];
 
-let sumatoriaIngresos = 0;
-let sumatoriaEgresos = 0;
-
-for (let index = 0; index < flujoDeCaja.length; index++) {
-  const element = flujoDeCaja[index];
-  sumatoriaEgresos += element.egresos;
-  sumatoriaIngresos += element.ingresos;
-}
-
-console.log("Ingresos totales: " + sumatoriaIngresos);
-console.log("Egresos totales: " + sumatoriaEgresos);
-
-let welcome = document.getElementById("welcome");
-let remanente = sumatoriaIngresos - sumatoriaEgresos;
-
-if (remanente > 0) {
+let resultado = calcularBalance(flujoDeCaja);
+if (resultado === 1) {
   welcome.innerHTML = `El flujo de este año esta <b>generando ganancias<b>.`;
   console.log(`El flujo de este año esta generando ganancias.`);
-} else {
+} else if (resultado === -1) {
   welcome.innerHTML = `El flujo de este año esta <b>generando perdidas<b>.`;
   console.log(`El flujo de este año esta generando perdidas.`);
+} else {
+  welcome.innerHTML = `El flujo de este año esta <b>en cero<b>.`;
+  console.log(`El flujo de este año esta en cero.`);
 }

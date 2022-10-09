@@ -4,6 +4,26 @@ todas esas alternativas de crédito y genere un
 array con la información de dichas alternativas
 sumando el dato calculado del interés. */
 
+function calcularInteres(ofertaCreditos) {
+  let creditoPlus = [];
+
+  for (let index = 0; index < ofertaCreditos.length; index++) {
+    const element = ofertaCreditos[index];
+
+    let plus = {
+      nombre: element.nombre,
+      capital: element.capital,
+      plazo: element.plazo,
+      taza: element.taza,
+      montoInteres: (element.capital * element.plazo * element.taza) / 100,
+    };
+
+    creditoPlus.push(plus);
+  }
+
+  return creditoPlus;
+}
+
 let ofertaCreditos = [
   {
     nombre: "Plan001",
@@ -25,20 +45,4 @@ let ofertaCreditos = [
   },
 ];
 
-let creditoPlus = [];
-
-for (let index = 0; index < ofertaCreditos.length; index++) {
-  const element = ofertaCreditos[index];
-
-  let plus = {
-    nombre: element.nombre,
-    capital: element.capital,
-    plazo: element.plazo,
-    taza: element.taza,
-    montoInteres: (element.capital * element.plazo * element.taza) / 100,
-  };
-
-  creditoPlus.push(plus);
-}
-
-console.log(creditoPlus);
+console.log(calcularInteres(ofertaCreditos));
