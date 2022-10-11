@@ -1,48 +1,46 @@
-/*Consigna
-Diseñar un programa JavaScript que recorra
-todas esas alternativas de crédito y genere un
-array con la información de dichas alternativas
-sumando el dato calculado del interés. */
+//Se resuelve usando JQuery
 
-function calcularInteres(ofertaCreditos) {
-  let creditoPlus = [];
+const boton = $("#calcular");
 
-  for (let index = 0; index < ofertaCreditos.length; index++) {
-    const element = ofertaCreditos[index];
+boton.on("click", function () {
+  const ingresoTotal = Number($("#ingresoTotal").val());
 
-    let plus = {
-      nombre: element.nombre,
-      capital: element.capital,
-      plazo: element.plazo,
-      taza: element.taza,
-      montoInteres: (element.capital * element.plazo * element.taza) / 100,
-    };
+  const gastosNecesarios = Number($("#gastosNecesarios").val());
+  const gastosOpcionales = Number($("#gastosOpcionales").val());
+  const ahorroInversion = Number($("#ahorroInversion").val());
 
-    creditoPlus.push(plus);
+  const porcentajes = gastosNecesarios + gastosOpcionales + ahorroInversion;
+
+  if (ingresoTotal > 0) {
+    if (
+      gastosNecesarios >= 0 &&
+      gastosNecesarios <= 100 &&
+      gastosOpcionales >= 0 &&
+      gastosOpcionales <= 100 &&
+      ahorroInversion >= 0 &&
+      ahorroInversion <= 100
+    ) {
+      if (porcentajes <= 100) {
+        $("#resultado").html(
+          "El dinero sera usado de la siguiente manera: <br> $" +
+            (ingresoTotal * gastosNecesarios) / 100 +
+            " para gastos Necesarios. <br>$" +
+            (ingresoTotal * gastosOpcionales) / 100 +
+            " para gastos Opcionales. <br>$" +
+            (ingresoTotal * ahorroInversion) / 100 +
+            " para Ahorro e Inversión."
+        );
+      } else {
+        $("#resultado").html(
+          `** Los suma de los porcentajes ingresados no debe superar 100.`
+        );
+      }
+    } else {
+      $("#resultado").html(
+        `** Los porcentajes requeridas deben estar entre 0 y 100.`
+      );
+    }
+  } else {
+    $("#resultado").html(`** El total de ingresos debe ser mayor que cero.`);
   }
-
-  return creditoPlus;
-}
-
-let ofertaCreditos = [
-  {
-    nombre: "Plan001",
-    capital: 150000,
-    plazo: 30,
-    taza: 15,
-  },
-  {
-    nombre: "Plan002",
-    capital: 300000,
-    plazo: 180,
-    taza: 10,
-  },
-  {
-    nombre: "Plan001",
-    capital: 485000,
-    plazo: 60,
-    taza: 23,
-  },
-];
-
-console.log(calcularInteres(ofertaCreditos));
+});
