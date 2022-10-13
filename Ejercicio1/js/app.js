@@ -1,27 +1,15 @@
-//Se resuelve usando JQuery
+/* Realizar una función llamada Producto.
+ * Esta función debe recibir el id, nombre, precio y stock del producto, y
+retornar un objeto con esos campos. */
 
-const boton = $("#calcular");
+function producto(id, nombre, precio, stockProducto) {
+  return {
+    id: id,
+    nombre: nombre,
+    precio: precio,
+    stockProducto: stockProducto,
+  };
+}
 
-boton.on("click", function () {
-  const costoFijo = Number($("#costoFijo").val());
-  const precioVenta = Number($("#precioVenta").val());
-  const costoVariable = Number($("#costoVariable").val());
-
-  if (costoFijo > 0 && precioVenta > 0 && costoVariable > 0) {
-    if (precioVenta > costoVariable) {
-      $("#resultado").html(
-        `El punto de equilibrio es: ${
-          costoFijo / (precioVenta - costoVariable)
-        }`
-      );
-    } else {
-      $("#resultado").html(
-        `** El precio de venta debe ser mayor al costo variable. La fórmula es: <br> costoFijo / (precioVenta - costoVariable)`
-      );
-    }
-  } else {
-    $("#resultado").html(
-      `** Debe ingresar numero mayores a cero en cada caja.`
-    );
-  }
-});
+//Probamos en consola
+console.log(producto(23, "Televisor", 45000, 15));

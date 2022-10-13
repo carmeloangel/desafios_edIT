@@ -4,59 +4,23 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>Ejercicio 2 - Desafio M15</title>
+    <link rel="shortcut icon" href="#" />
+    <title>Ejercicio 2 - Desafio M16</title>
   </head>
   <body>
-    <p>
-      Ingrese los datos para calcular la
-      <strong>distribución de gastos</strong>.
+    <p id="welcome">
+      A todo lo hecho en el ejercicio 1,agregar una funcion "Carrito" que haga:
+      <br />
+      1. Incrementar la cantidad de un producto ya existente en el carrito.
+      <br />
+      2. Agregar un nuevo producto al carrito. <br />
+      3. Quitar un producto ya existente. <br />
+      4. Obtener un reporte con el precio total y el detalle. Cada fila de del
+      detalle debe tener el nombre del producto, el precio del producto, la
+      cantidad pedida y el total por fila.
     </p>
 
-    <div>
-      <label for="ingresoTotal"
-        >Total de ingresos<input
-          type="number"
-          name="ingresoTotal"
-          id="ingresoTotal"
-          min="1"
-          required
-      /></label>
-
-      <label for="gastosNecesarios"
-        >% en Gastos Necesarios<input
-          type="number"
-          name="gastosNecesarios"
-          id="gastosNecesarios"
-          min="1"
-          max="100"
-          required
-      /></label>
-
-      <label for="gastosOpcionales"
-        >% en Gastos Opcionales<input
-          type="number"
-          name="gastosOpcionales"
-          id="gastosOpcionales"
-          min="1"
-          max="100"
-          required
-      /></label>
-      <label for="ahorroInversion"
-        >% en Ahorros e Inversión<input
-          type="number"
-          name="ahorroInversion"
-          id="ahorroInversion"
-          min="1"
-          max="100"
-          required
-      /></label>
-      <button id="calcular">Calcular</button>
-
-      <p id="resultado">[ Aquí se mostrará el resultado ]</p>
-    </div>
-
-    <script src="js/jquery-3.6.1.min.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/carritoB.js"></script>
   </body>
 </html>
