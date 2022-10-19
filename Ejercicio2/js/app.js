@@ -1,130 +1,189 @@
-/* A todo lo hecho en el ejercicio 1, agregar una funcion "Carrito" que haga:
+/* En esta segunda parte, te proponemos diseñar las siguientes funciones para gestionar
+AlmacenamientoTareas:
+1. AgregarTarea, para agregar una nueva tarea.
+2. EditarTarea, que recibe una tarea y la modifica.
+3. BorrarTarea, que borra una tarea ya existente.
+4. ReporteTodasTareas, que devuelve todas las tareas.
+5. ReporteTareasEnCurso, que devuelve las tareas cuyo estado es ‘en-curso’.
+6. ReporteTareasPendientes, que devuelve las tareas cuyo estado es ‘pendiente’.
+7. ReporteTareasTerminadas, que devuelve las tareas cuyo estado es ‘terminada’. */
 
-1. Incrementar la cantidad de un producto ya existente en el carrito.
-2. Agregar un nuevo producto al carrito.
-3. Quitar un producto ya existente.
-4. Obtener un reporte con el precio total y el detalle. Cada fila de del detalle debe tener
-el nombre del producto, el precio del producto, la cantidad pedida y el total por fila.
-*/
-
-//Función que crea un producto
-function producto(id, nombre, precio, stockProducto) {
+function tarea(
+  code,
+  title,
+  description,
+  initialDate,
+  deathline,
+  observations,
+  state
+) {
   return {
-    id: id,
-    nombre: nombre,
-    precio: precio,
-    stockProducto: stockProducto,
+    code: code,
+    title: title,
+    description: description,
+    initialDate: initialDate,
+    deathline: deathline,
+    observations: observations,
+    state: state,
   };
 }
 
-//Crear un carrito
-let carrito = () => {
-  //Array que guarda los productos a comprar
-  let elementos = [];
+//Creamos tareas
+const tarea1 = tarea(
+  001,
+  "Limpiar Televisor",
+  "Para ver multimedia mejor",
+  "2022-03-21",
+  "2023-05-30",
+  "No golpearlo",
+  "en-curso"
+);
+const tarea2 = tarea(
+  002,
+  "Mixer aceitacion",
+  "Para licuar mejor",
+  "2022-05-21",
+  "2028-05-30",
+  "No sumergirlo",
+  "terminada"
+);
+const tarea3 = tarea(
+  003,
+  "Celulares comprar",
+  "Para comunicarse",
+  "2021-05-15",
+  "2036-09-22",
+  "No traer fallidos",
+  "pendiente"
+);
+const tarea4 = tarea(
+  004,
+  "Sacar Basura",
+  "Para la higiene",
+  "2022-10-19",
+  "2022-10-20",
+  "No olvidar lo del fondo",
+  "en-curso"
+);
+const tarea5 = tarea(
+  005,
+  "Sacar Perros a pasear",
+  "Para salud mental",
+  "2022-10-19",
+  "2022-10-20",
+  "No olvidar los de la terraza",
+  "pendiente"
+);
 
-  //Agrega un producto nuevo al carrito
-  function agregarProducto(producto, cantidad) {
-    elementos.push({
-      producto: producto,
-      cantidad: cantidad,
-    });
+const tasksGestor = () => {
+  const taskStorage = [tarea1, tarea2, tarea3];
+
+  //1- Agrega una tarea nueva a la lista
+  function addTask(tarea) {
+    taskStorage.push(tarea);
   }
 
-  //Aumenta la cantidad de un producto que ya estan en el carrito
-  function aumentarUnProducto(item, aumento) {
-    let flag = 0;
-
-    elementos.forEach((element) => {
-      if (element.producto.nombre === item.nombre) {
-        element.cantidad += aumento;
-        flag = 1;
+  //2- Recibe una tarea y la modifica.
+  function editTask(tarea) {
+    for (let i = 0; i < taskStorage.length; i++) {
+      if (taskStorage[i] === tarea) {
+        taskStorage[i].title = prompt("Ingrese un nuevo nombre de tarea");
+        console.log("Se modifico la tarea pedida");
+        return;
       }
-    });
-
-    if (flag === 0) {
-      console.log(
-        "No se encontro el producto en el carrito, al tratar de aumentar un producto."
-      );
     }
+    console.log("No se encontro la tarea buscada");
   }
 
-  //Elimina un producto especifico del carrito
-  function eliminarProducto(item) {
-    let flag = 0;
+  //3- Elimina una tarea de la lista
+  function eraseTask(item) {
+    for (let i = 0; i < taskStorage.length; i++) {
+      const element = taskStorage[i];
 
-    for (let i = 0; i < elementos.length; i++) {
-      const element = elementos[i];
-
-      if (element.producto.nombre === item.nombre) {
-        elementos.splice(i, 1);
-        flag = 1;
+      if (element.title === item.title) {
+        taskStorage.splice(i, 1);
+        console.log("Se eliminó la tarea pedida");
+        return;
       }
     }
-
-    if (flag === 0) {
-      console.log(
-        "No se encontro el producto en el carrito, al tratar de eliminar."
-      );
-    }
+    console.log("No se encontro la tarea buscada");
   }
 
-  //Resumen del pedido con el precio de cada item
-  function resumenPedido() {
-    let precioTotal = 0;
-    const detalle = [];
+  //4- Devolver tareas
+  function returnAllTasks() {
+    return taskStorage;
+  }
 
-    elementos.forEach((item) => {
-      const precioTotalItem = item.producto.precio * item.cantidad;
-      detalle.push({
-        nombre: item.producto.nombre,
-        precioUnitario: item.producto.precio,
-        cantidad: item.cantidad,
-        precioAcumulado: precioTotalItem,
-      });
-      precioTotal += precioTotalItem;
+  //5- Devolver tareas en curso
+  function returnOngoingTasks() {
+    const auxStorage = [];
+    taskStorage.forEach((element) => {
+      if (element.state === "en-curso") auxStorage.push(element);
     });
-
-    return {
-      detalle: detalle,
-      precioTotal: precioTotal,
-    };
+    if (auxStorage.length === 0) console.log("No hay tareas en curso");
+    return auxStorage;
   }
 
-  //Retorna el carrito con sus atributos y metodos
+  //6- Devolver tareas pendientes
+  function returnPendingTasks() {
+    const auxStorage = [];
+    taskStorage.forEach((element) => {
+      if (element.state === "pendiente") auxStorage.push(element);
+    });
+    if (auxStorage.length === 0) console.log("No hay tareas pendientes");
+    return auxStorage;
+  }
+
+  //7- Devolver tareas pendientes
+  function returnEndedTasks() {
+    const auxStorage = [];
+    taskStorage.forEach((element) => {
+      if (element.state === "terminada") auxStorage.push(element);
+    });
+    if (auxStorage.length === 0) console.log("No hay tareas terminadas");
+    return auxStorage;
+  }
+
+  //Retorna el gestor con sus atributos y metodos
   return {
-    agregarProducto: agregarProducto,
-    aumentarUnProducto: aumentarUnProducto,
-    eliminarProducto: eliminarProducto,
-    resumenPedido: resumenPedido,
-    elementos: elementos,
+    taskStorage: taskStorage,
+    addTask: addTask,
+    editTask: editTask,
+    eraseTask: eraseTask,
+    returnAllTasks: returnAllTasks,
+    returnOngoingTasks: returnOngoingTasks,
+    returnPendingTasks: returnPendingTasks,
+    returnEndedTasks: returnEndedTasks,
   };
 };
 
-//Creamos productos
-const producto1 = producto(23, "Televisor", 45000, 15);
-const producto2 = producto(29, "Lavarropas", 49000, 11);
-const producto3 = producto(33, "Mixer", 15000, 35);
+//*** Ahora iremos probando todos los métodos
 
-//Se crea un carrito de prueba
-const carrito1 = carrito();
+//Se crea un gestor de tareas
+const gestor = tasksGestor();
 
-//Se agregan productos al carrito1
-carrito1.agregarProducto(producto2, 4);
-carrito1.agregarProducto(producto3, 1);
-// console.log(carrito1);
+//Se agrega tarea4 al array del gestor
+gestor.addTask(tarea4);
+// console.log(gestor.taskStorage);
 
-//Se modifica la cantidad de un producto del carrito1
-carrito1.aumentarUnProducto(producto3, 10);
-// console.log(carrito1);
+//Se edita el titulo de la tarea 2, al array del gestor
+// gestor.editTask(tarea2);
+// gestor.editTask(tarea5);
+// console.log(gestor.taskStorage);
 
-//Removemos el producto 2 del carrito1
-carrito1.eliminarProducto(producto2);
-// console.log(carrito1);
+//Se elimina tarea3 al array del gestor
+// gestor.eraseTask(tarea3);
+// gestor.eraseTask(tarea5);
+// console.log(gestor.taskStorage);
 
-//Volvemos a agregar 2 productos al carrito1
-carrito1.agregarProducto(producto2, 3);
-carrito1.agregarProducto(producto1, 1);
+//Vemos todas las tareas
+// console.log(gestor.returnAllTasks());
 
-//Vemos el carrito y resumen del pedido
-console.log(carrito1);
-console.log(carrito1.resumenPedido());
+//Vemos solo tareas en curso
+// console.log(gestor.returnOngoingTasks());
+
+//Vemos solo tareas pendientes
+// console.log(gestor.returnPendingTasks());
+
+//Vemos solo tareas terminadas
+console.log(gestor.returnEndedTasks());
