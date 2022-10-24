@@ -1,0 +1,23 @@
+/* body {
+  background-color: slategray;
+  color: white;
+} */
+
+#form {
+  display: flex;
+  flex-direction: column;
+  width: 260px;
+  gap: 10px;
+}
+input {
+  width: 150px;
+}
+
+label {
+  display: flex;
+  justify-content: space-between;
+}
+
+#error {
+  color: brown;
+}
