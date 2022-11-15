@@ -1,20 +1,54 @@
-/* Cree una función llamada  function gastoConIva() que acepte un número y devuelva ese número más el 21% que es el valor del IVA. Luego crea una function map() que tome dos entradas o parámetros: <br>
-        1) Un array de como valores números. <br> 
-        2) Una función callback: esta función se aplica a cada elemento del array (dentro de la función map(). <br>
-Haga que su function map() devuelva una nueva matriz llena de números que son el resultado de usar la función callback en cada elemento de la matriz de entrada */
+/***
+Tenemos un cliente que nos está pidiendo que el sistema que estamos desarrollando tenga una 
+contraseña segura pero con las siguientes característica, que esta debe contener: 
+1) Que tenga una longitud de 12 caracteres mínimo.
+2) Debe contener al menos 1 letra en mayúscula.
+3) Debe contener al menos 1 letra en minúscula.
+4) No puede contener espacios vacíos.
+*/
 
-function gastoConIva(numero) {
-  return numero * 1.21;
-}
+function CampoRequerido(selectorName) {
+  let isValid = false;
 
-function map(array, callback) {
-  matrizIVA = [];
-  array.forEach((element) => {
-    matrizIVA.push([element, callback(element)]);
+  const nodo = document.querySelector(selectorName);
+
+  const regExp1 = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)([A-Za-z\d]|[^ ]){12,}$/;
+
+  nodo.addEventListener("blur", () => {
+    if (nodo.value !== "" && nodo.value != null) {
+      if (regExp1.test(nodo.value)) {
+        isValid = true;
+      } else {
+        isValid = false;
+      }
+    }
   });
-  return matrizIVA;
+
+  //Insertamos una propiedad en el elemento "nodo"
+  nodo.isValid = () => {
+    return isValid;
+  };
+
+  return nodo;
 }
 
-array = [12000, 563, 5865, 166, 100];
+const pass = CampoRequerido("#password");
+const form = document.querySelector("#form");
+const error = document.querySelector("#error");
 
-console.log(map(array, gastoConIva));
+form.addEventListener("submit", (e) => {
+  const mensaje = [];
+
+  if (!pass.isValid()) {
+    mensaje.push(
+      "La contraseña debe contener al menos 12 caracteres alfanuméricos. Al menos 1 mayúscula y 1 minúscula. No espacios en blanco."
+    );
+  }
+
+  if (mensaje.length > 0) {
+    e.preventDefault();
+    error.innerHTML = mensaje.join(" ");
+  } else {
+    alert("Datos enviados correctamente.");
+  }
+});
